@@ -56,6 +56,18 @@ def scrape_song_lyrics(url):
     return lyrics
 
 
+def write_lyrics_to_file(artist_name, song_count):
+    f = open('lyrics/' + artist_name.lower() + '.txt', 'wb')
+    urls = request_song_url(artist_name, song_count)
+    for url in urls:
+        lyrics = scrape_song_lyrics(url)
+        f.write(lyrics.encode("utf8"))
+    f.close()
+    num_lines = sum(1 for line in open('lyrics/' + artist_name.lower() + '.txt', 'rb'))
+    print('Wrote {} lines to file from {} songs'.format(num_lines, song_count))
+
+
 if __name__ == '__main__':
-    print(request_song_url('Lana Del Rey', 20))
-    print(scrape_song_lyrics('https://genius.com/Lana-del-rey-young-and-beautiful-lyrics'))
+    # print(request_song_url('Lana Del Rey', 1))
+    # print(scrape_song_lyrics('https://genius.com/Lana-del-rey-young-and-beautiful-lyrics'))
+    write_lyrics_to_file('Ariana Grande', 100)
