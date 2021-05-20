@@ -4,7 +4,7 @@ Just a simple web scraper utilizing the Genius API to extract lyrics from the we
 # How to Use:
 
 1. First, you must obtain an API token from [Genius](https://docs.genius.com/), directions on how to do so are clearly labeled on their website.
-2. Next, prepare your Python environment! You will need to pip install these modules, which you can do easily with the `pip install -r requirements.txt:
+2. Next, prepare your Python environment! You will need to pip install these modules, which you can do easily with the `pip install -r requirements.txt`:
   - `requests`
   - `bs4 from BeautifulSoup`
   - `os` and `re` come with Python by default, so no need to pip install, just import.
