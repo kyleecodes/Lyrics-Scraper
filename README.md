@@ -4,7 +4,7 @@ Just a simple web scraper utilizing the Genius API to extract lyrics from the we
 # How to Use:
 
 1. First, you must obtain an API token from [Genius](https://docs.genius.com/), directions on how to do so are clearly labeled on their website.
-2. Next, prepare your Python environment! Whether you are using `virtualenv` or not, you will need to pip install these modules:
+2. Next, prepare your Python environment! You will need to pip install these modules:
   - `requests`
   - `bs4 from BeautifulSoup`
   - `os`
@@ -18,6 +18,3 @@ if __name__ == '__main__':
 ```
 5. Enjoy your lyrics! They will be printed to a txt file with the artist name as it's title.
 
-### TO DO:
-- [ ] improve artist name validation 
-- [ ] optimize for speed (alternatives to for loops?)
