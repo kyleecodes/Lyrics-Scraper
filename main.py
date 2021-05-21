@@ -48,12 +48,20 @@ def request_song_url(artist_name, song_cap):
 def scrape_song_lyrics(url):
     page = requests.get(url)
     html = BeautifulSoup(page.text, 'html.parser')
-    lyrics = html.find('div', class_='lyrics').get_text()
-    # remove identifiers like chorus, verse, etc
-    lyrics = re.sub(r'[\(\[].*?[\)\]]', '', lyrics)
-    # remove empty lines
-    lyrics = os.linesep.join([s for s in lyrics.splitlines() if s])
-    return lyrics
+    try:
+        lyrics = html.find('div', class_='lyrics').get_text()
+        lyrics = re.sub(r'[\(\[].*?[\)\]]', '', lyrics)
+        lyrics = os.linesep.join([s for s in lyrics.splitlines() if s])
+        return lyrics
+    except AttributeError:
+        lyrics = html.find('div', class_='SongPageGrid-sc-1vi6xda-0 DGVcp Lyrics__Root-sc-1ynbvzw-0 jvlKWy').get_text()
+        lyrics = str(lyrics)
+        lyrics = lyrics.replace('<br/>', '\n')
+        lyrics = re.sub(r'(\<.*?\>)', '', lyrics)
+        return lyrics
+    finally:
+        print("Divs not found")
+        return
 
 
 def write_lyrics_to_file(artist_name, song_count):
@@ -68,6 +76,5 @@ def write_lyrics_to_file(artist_name, song_count):
 
 
 if __name__ == '__main__':
-    # print(request_song_url('Lana Del Rey', 1))
-    # print(scrape_song_lyrics('https://genius.com/Lana-del-rey-young-and-beautiful-lyrics'))
-    write_lyrics_to_file('Ariana Grande', 100)
+    # write_lyrics_to_file('Kendrick Lamar', 100)
+    write_lyrics_to_file('Ariana Grande', 2)
