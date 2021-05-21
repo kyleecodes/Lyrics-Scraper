@@ -1,33 +1,4 @@
-Skip to content
-Search or jump to…
 
-Pull requests
-Issues
-Marketplace
-Explore
-
-@kyleecodes
-kyleecodes
-/
-Lyrics-Scraper
-1
-0
-0
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-Settings
-Lyrics-Scraper/lyrics/kendrick lamar.txt
-@kyleecodes
-kyleecodes First iteration (easy) finished
-Latest commit 9f63173 on Jan 10
- History
- 1 contributor
 8397 lines (8397 sloc)  354 KB
 
 Nobody pray for me
@@ -8427,16 +8398,3 @@ Even if we seem to separate, eventually it’ll come to pass, and she’ll need 
 I need her, we need we
 That girl is smoking, and can you believe that I'm her focus?
 It ain’t hard to see she got me open, and together we are roller-coasting on
-© 2021 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
-Loading complete
